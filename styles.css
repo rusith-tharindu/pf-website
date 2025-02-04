@@ -453,7 +453,7 @@ a {
 
 /* Main container for each post slider */
 .post-slider {
-    background: var(--background-color);
+    background: #0f0f0f;
     box-shadow: var(--card-shadow);
     display: flex;
     margin: 0 0 var(--card-margin) 0;
@@ -929,10 +929,13 @@ footer .wave#wave4{
 @media (max-width: 900px) {
     .hero {
         flex-direction: column;
+        width: 50vw;
+        height: 50vh;
+        display: flex;
     }
 
     h1 {
-        font-size: 60px;
+        font-size: 40px;
     }
 
     .h1-revealer,
@@ -947,15 +950,22 @@ footer .wave#wave4{
     }
 
     .h2{
-        font-size: 40px;
+        font-size: 20px;
     }
 
     h2 {
-        font-size: 40px;
+        font-size: 30px;
+        margin-left: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .paragraph-large {
-        font-size: 18px;
+        font-size: 12px;
+        margin-left: 50px;
+
     }
 
     .padding-vertical-xlarge {
@@ -984,11 +994,15 @@ footer .wave#wave4{
 
     .timeline_date-text {
         margin-bottom: 24px;
-        font-size: 36px;
+        font-size: 20px;
+    }
+
+    .timeline_date-text p{
+        margin-left: 0px;
     }
 
     .timeline_text {
-        font-size: 20px;
+        font-size: 12px;
     }
 
     .timeline_progress {
@@ -996,7 +1010,7 @@ footer .wave#wave4{
     }
 
     .margin-bottom-xlarge {
-        margin-bottom: 48px;
+        margin-bottom: 28px;
     }
 
     .graphic_design   .items {
@@ -1011,6 +1025,355 @@ footer .wave#wave4{
         backdrop-filter: blur(20px);
         border: 1px solid rgba(255, 255, 255, 0.25);
     }
+
+    /*card stack*/
+    /* Parent container for timeline, card_stack, and bottom */
+    .parent-container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;  /* Ensures full-page height */
+        justify-content: space-between; /* Ensures space between sections */
+    }
+
+    .card_stack {
+        flex: 0 1 auto; /* Keeps card_stack below timeline */
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* Container for the entire page content */
+    .page-wrap {
+        max-width: 1600px;
+        margin-top: 1800px;
+    }
+
+    /* Post sliders section */
+    .post-sliders {
+        padding-top: calc(60px * 1.5);
+        max-width: 900px;
+    }
+
+    /* Section heading for post sliders */
+    .section-heading {
+        font-weight: 800;
+        font-size: 40px;
+        margin-top: 1000px;
+        margin-bottom: -3%;
+    }
+
+    /* Main container for each post slider */
+    .post-slider {
+        background: #0f0f0f;
+        box-shadow: var(--card-shadow);
+        display: flex;
+        margin: 0 -50px var(--card-margin) 0;
+        padding: 0 32px 32px;
+        position: relative;
+    }
+
+    /* Header card for each slider */
+    .post-slider-header {
+        color: var(--text-color);
+        margin-top: 2rem;
+        flex: 0 0 250px;
+        margin-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: var(--header-card-padding);
+        transform: translateY(-10px);
+        position: relative;
+    }
+
+    /* Border and background for the header card */
+    .post-slider-header::before {
+        content: "";
+        /*background: linear-gradient(130deg, #ff7a18 0%, #af002d 41.07%, #319197 76.05%);*/
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        z-index: 1;
+        border-radius: 12px;
+    }
+
+    /* Dark overlay for the header card */
+    .post-slider-header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 2;
+        border-radius: 8px;
+    }
+
+    /* Styling for the text inside the header card */
+    .header-card * {
+        color: var(--text-color);
+        position: relative;
+        z-index: 3;
+        font-size: 15px;
+    }
+
+    /* Title inside the header card */
+    .header-card-title {
+        font-weight: 800;
+        font-size: 25px;
+        line-height: 1.1;
+        margin-bottom: 16px;
+    }
+
+    /* Grid container for mini cards */
+    .mini-card-grid {
+        padding: 3rem 0 3rem 2rem;
+        display: flex;
+        overflow-x: scroll;
+        gap: 1rem;
+        position: relative;
+    }
+
+    /* Styling for each mini card */
+    .mini-card-grid .mini-card {
+        min-width: 250px;
+        min-height: 50px;
+        box-shadow: -2rem 0 3rem -2rem #000;
+        padding: var(--card-padding);
+        border-radius: var(--mini-card-border-radius);
+        background: linear-gradient(85deg, #434343, #262626);
+        color: var(--text-color);
+        display: flex;
+        flex-direction: column;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+
+    /* Mini card spacing except for the first one */
+    .mini-card-grid .mini-card:not(:first-child) {
+        margin-left: -130px;
+        box-shadow: -3rem 0 3rem -2rem #000;
+    }
+
+    /* Styling for the time inside mini cards */
+    .mini-card-grid .mini-card time {
+        display: block;
+        margin: 0 0 0.25rem 0;
+        color: #777;
+    }
+
+    /* Title inside the mini card */
+    .mini-card-grid .mini-card-title {
+        font-size: 1.3rem;
+        margin: 0 0 1rem 0;
+        font-weight: 800;
+        letter-spacing: 0.03rem;
+    }
+
+    /* Links inside mini cards */
+    .mini-card-grid .mini-card a {
+        color: var(--text-color);
+    }
+
+    /* Author row inside mini cards */
+    .mini-card-grid .author-row {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 0.5rem;
+        align-items: center;
+        color: #565656;
+        line-height: 1.3;
+        padding-top: 0.5rem;
+    }
+
+    /* Avatar inside the author row */
+    .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+    }
+
+    /* Description inside mini cards */
+    .mini-card-description {
+        display: block;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        color: #c0bb79;
+        font-size: 14px;
+    }
+
+    /* Hover effects for mini cards */
+    .mini-card-grid .mini-card:hover ~ .mini-card {
+        transform: translateX(130px);
+    }
+
+    .mini-card-grid .mini-card:first-child:hover {
+        transform: translate(-0.5rem, -1rem) rotate(3deg);
+    }
+
+    .mini-card-grid .mini-card:hover {
+        transform: translateY(-1rem) rotate(3deg);
+    }
+
+    /* Custom scrollbar for mini card grid */
+    .mini-card-grid {
+        overflow-x: auto;
+        background-repeat: no-repeat;
+        background-position: left center, right center, left center, right center;
+        background-size: 10px 100%, 10px 100%, 10px 100%, 10px 100%;
+        background-attachment: local, local, scroll, scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mini-card-grid::-webkit-scrollbar {
+        height: var(--scrollbar-height);
+        background-color: var(--scrollbar-bg);
+    }
+
+    .mini-card-grid::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-color);
+        border-radius: 3px;
+    }
+
+    .mini-card-grid::-webkit-scrollbar-button {
+        display: none;
+    }
+
+    /* Gallery */
+
+    .graphic_design {
+        position: relative;
+        /*    overflow: hidden; !* Prevents filters from overflowing *!*/
+        /*    min-height: 950vh; !* Ensures enough space for content *!*/
+    }
+
+    .graphic_design .section-heading {
+        font-weight: 800;
+        font-size: var(--heading-font-size);
+        margin-top: 60%;
+        margin-bottom: 0;
+    }
+
+    .graphic_design
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .graphic_design .filters {
+        position: absolute;
+        top: 1000%;
+        right: 0;
+        bottom: 0;
+        width: 50vw;
+        height: auto;
+        padding: 2em 2em 8em 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        /*padding: 1em;*/
+    }
+
+    .graphic_design .filter {
+        width: max-content;
+        height: max-content;
+        padding: 1.5em 0 0.5em 0;
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+    }
+
+    .graphic_design .filter.active {
+        padding-top: 2.5em;
+    }
+
+    .graphic_design .filter p {
+        position: relative;
+        bottom: 20px;
+        padding: 0 0.5em;
+        font-family: "Righteous", cursive;
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    .graphic_design .filter.active p {
+        bottom: 24px;
+    }
+
+    .graphic_design .filter h1 span {
+        position: relative;
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #ffffff;
+        line-height: 80%;
+        transition: color 0.3s;
+    }
+
+    .graphic_design .filter.active h1 span {
+        color: gold;
+    }
+
+    .graphic_design .items {
+        position: absolute;
+        margin-top: 10%;
+        left: 0;
+        width: 60%;
+        height: 100%;
+        padding: 2em;
+        display: flex;
+    }
+
+    .graphic_design .items-col {
+        flex: 1;
+        height: max-content;
+        padding: 2em 1em;
+    }
+
+    .graphic_design .items-col:nth-child(2) {
+        position: relative;
+        top: 10em;
+    }
+
+    .graphic_design .item {
+        padding: 1em 1em 4em 1em;
+    }
+
+    .graphic_design .item-img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .graphic_design .item-copy p {
+        font-family: "Righteous", cursive;
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0.5em 0;
+    }
+
+    .clients .wrapper {
+        width: 90%;
+        max-width: 1536px;
+        margin-inline: auto;
+        position: relative;
+        height: 100px;
+        margin-top: -60%;
+        overflow: hidden;
+        mask-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 1) 20%,
+                rgba(0, 0, 0, 1) 80%,
+                rgba(0, 0, 0, 0)
+        );
+    }
+
 }
 
 
