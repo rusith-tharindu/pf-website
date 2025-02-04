@@ -1126,7 +1126,7 @@ footer .wave#wave4{
         font-weight: 800;
         font-size: 25px;
         line-height: 1.1;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
     }
 
     /* Grid container for mini cards */
@@ -1244,117 +1244,78 @@ footer .wave#wave4{
         display: none;
     }
 
-    /* Gallery */
-
     .graphic_design {
-        position: relative;
-        /*    overflow: hidden; !* Prevents filters from overflowing *!*/
-        /*    min-height: 950vh; !* Ensures enough space for content *!*/
+        padding: 1rem;
+        text-align: center;
     }
 
     .graphic_design .section-heading {
-        font-weight: 800;
-        font-size: var(--heading-font-size);
-        margin-top: 60%;
-        margin-bottom: 0;
-    }
-
-    .graphic_design
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        font-size: 30px;
+        z-index: 10;
+        margin-bottom: 24px;
+        margin-left: 80px;
     }
 
     .graphic_design .filters {
-        position: absolute;
-        top: 1000%;
-        right: 0;
-        bottom: 0;
-        width: 50vw;
-        height: auto;
-        padding: 2em 2em 8em 2em;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
-        /*padding: 1em;*/
+        top: 100%;
+        left: 60%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
     }
 
+    /* ✅ Lock filter text size */
     .graphic_design .filter {
-        width: max-content;
-        height: max-content;
-        padding: 1.5em 0 0.5em 0;
+        padding: 0.3rem 0.8rem;
+        font-size: 8px !important; /* Ensure all filters have the same size */
+        background: transparent;
+        border: none;
+    }
+
+    .graphic_design .gallery {
         display: flex;
-        align-items: flex-end;
-        cursor: pointer;
+        flex-direction: column; /* ✅ Stack images vertically */
+        align-items: center; /* ✅ Center align if needed */
+        gap: 1rem; /* ✅ Add spacing between images */
+        width: 100%; /* ✅ Ensure full width */
     }
 
-    .graphic_design .filter.active {
-        padding-top: 2.5em;
+    .graphic_design .gallery img {
+        width: 100% !important; /* ✅ Full width images */
+        height: auto; /* ✅ Keep aspect ratio */
+        object-fit: cover; /* ✅ Ensure the image fills the width properly */
     }
 
-    .graphic_design .filter p {
-        position: relative;
-        bottom: 20px;
-        padding: 0 0.5em;
-        font-family: "Righteous", cursive;
-        font-size: 10px;
-        font-weight: 500;
-    }
-
-    .graphic_design .filter.active p {
-        bottom: 24px;
+    /* ✅ Keep inactive filters the same size when an active filter is selected */
+    .graphic_design .filter:not(.active) p {
+        font-size: 8px !important;
     }
 
     .graphic_design .filter h1 span {
-        position: relative;
-        text-transform: uppercase;
-        font-size: 20px;
-        color: #ffffff;
-        line-height: 80%;
-        transition: color 0.3s;
+        white-space: nowrap; /* ✅ Prevents text from breaking into multiple lines */
+        font-size: 8px !important;
     }
 
+
+    /* ✅ Ensure only the active filter stays controlled */
     .graphic_design .filter.active h1 span {
-        color: gold;
-    }
-
-    .graphic_design .items {
-        position: absolute;
-        margin-top: 10%;
-        left: 0;
-        width: 60%;
-        height: 100%;
-        padding: 2em;
-        display: flex;
-    }
-
-    .graphic_design .items-col {
-        flex: 1;
-        height: max-content;
-        padding: 2em 1em;
-    }
-
-    .graphic_design .items-col:nth-child(2) {
-        position: relative;
-        top: 10em;
-    }
-
-    .graphic_design .item {
-        padding: 1em 1em 4em 1em;
+        font-size: 8px !important;
     }
 
     .graphic_design .item-img {
-        width: 100%;
-        height: 300px;
+        display: block;
+        width: 140% !important; /* ✅ Full-width */
+        height: auto !important; /* ✅ Maintain aspect ratio */
+        object-fit: cover; /* ✅ Ensure proper scaling */
+        margin-left: 30px;
+        margin-bottom: 1rem; /* ✅ Add spacing between images */
     }
 
     .graphic_design .item-copy p {
-        font-family: "Righteous", cursive;
-        font-size: 15px;
-        font-weight: 500;
-        margin: 0.5em 0;
+        font-size: 8px;
+        margin-left: 20px;
     }
 
     .clients .wrapper {
@@ -1373,6 +1334,102 @@ footer .wave#wave4{
                 rgba(0, 0, 0, 0)
         );
     }
+
+    footer{
+        position: relative;
+        margin-top: 1350%;
+        width: 117%;
+        background: #2d2d2d;
+        min-height: 100px;
+        padding: 20px 50px;
+        flex-direction: column;
+    }
+
+    footer .icons, footer .menu{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 8px 0;
+        flex-wrap: wrap;
+    }
+
+    footer .icons li, footer .menu li{
+        list-style: none;
+    }
+    footer .icons li a{
+        font-size: 2em;
+        color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+        display: inline;
+        transition: 0.5s;
+    }
+
+    footer .icons li a:hover{
+        transform: translateY(-10px);
+    }
+
+    footer .menu li a{
+        font-size: 1em;
+        color: #a5a4a5;
+        margin: 10px 10px;
+        display: inline;
+        transition: 0.5s;
+        text-decoration: none;
+        opacity: 0.75;
+    }
+    footer .menu li a:hover{
+        opacity: 1;
+        color: gold;
+    }
+
+    footer p {
+        color: #a5a4a5;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    footer .wave{
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url('./assets/wave.png');
+        background-size: 1000px 100px;
+    }
+    footer .wave#wave1{
+        z-index: 1000;
+        opacity: 1;
+        bottom: 0;
+        animation: animatewave 4s linear infinite;
+    }
+
+    footer .wave#wave2{
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10px;
+        animation: animatewave_02 4s linear infinite;
+    }
+    footer .wave#wave3{
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 15px;
+        animation: animatewave 3s linear infinite;
+    }
+
+    footer .wave#wave4{
+        z-index: 999;
+        opacity: 0.7;
+        bottom: 20px;
+        animation: animatewave_02 3s linear infinite;
+    }
+
+
 
 }
 
